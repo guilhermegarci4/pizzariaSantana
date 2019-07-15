@@ -92,7 +92,7 @@ require_once 'front/header.php'
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-last-name">Lado da pizza no cardápio</label>
-                        <select id="" name="lado" class="form-control form-control-alternative">
+                        <select id="" value="<?php echo $row['lado'];?>" name="lado" class="form-control form-control-alternative">
                             <option value="0"> Esquerdo </option>
                             <option value="1"> Direito </option>
                         </select>
@@ -102,6 +102,15 @@ require_once 'front/header.php'
                     <div class="col-lg-12">
                       <div class="form-group">
                         <label class="form-control-label" for="input-last-name">Foto da Pizza</label>
+
+                        <?php 
+
+                        if ($row['foto']!="")
+                            {
+                                echo '<img src="fotoPizza/'.$row['foto'].'" width=100>';
+                            }
+                        ?>
+
                         <input type="file" name="foto" id="input-last-name" class="form-control form-control-alternative" placeholder="Ex: 32,00">
                       </div>
                     </div>
