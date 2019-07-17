@@ -18,7 +18,7 @@
     require_once 'back/conexao.php';
     require_once 'front/header.php';
 
-    $SQL = "SELECT * FROM cardapio";
+    $SQL = "SELECT * FROM destaque";
     $result = mysqli_query($con, $SQL);
 ?>
 
@@ -30,8 +30,8 @@
       <div class="container-fluid d-flex align-items-center">
         <div class="row">
           <div class="col-lg-7 col-md-10">
-            <h1 class="display-3 text-white">Editar pizza</h1>
-            <p class="text-white mt-0 mb-5">Nesta página é desenvolvida para editar as pizza do cardápio principal do site.</p>
+            <h1 class="display-3 text-white">Editar pizza em destaques</h1>
+            <p class="text-white mt-0 mb-5">Nesta página é desenvolvida para editar as pizza em destaques do site.</p>
             
           </div>
         </div>
@@ -43,7 +43,7 @@
         <div class="col">
           <div class="card shadow">
             <div class="card-header border-0">
-              <h3 class="mb-0">Pizzas cadastradas</h3>
+              <h3 class="mb-0">Pizzas cadastradas em destaques</h3>
             </div>
             <div class="table-responsive">
               <table class="table align-items-center table-flush">
@@ -51,7 +51,7 @@
                   <tr>
                     <th scope="col">Pizza</th>
                     <th scope="col">Preço</th>
-                    <th scope="col">Ingredientes</th>
+                    <th scope="col">Descrição</th>
                     <th scope="col"></th>
                   </tr>
                 </thead>
@@ -62,19 +62,19 @@
                     <th scope="row">
                       <div class="media align-items-center">
                         <a href="#" class="avatar rounded-circle mr-3">
-                          <img alt="Image placeholder" src="fotoPizza/<?php echo $dados['foto'] ?>">
+                          <img alt="Image placeholder" src="fotoPizzaDestaque/<?php echo $dados['fotoDestaque'] ?>">
                         </a>
                         <div class="media-body">
-                          <span class="mb-0 text-sm"><?php echo $dados['noPizza']. ' - ' . $dados['sabor'] ?></span>
+                          <span class="mb-0 text-sm"><?php echo $dados['saborDestaque'] ?></span>
                         </div>
                       </div>
                     </th>
                     <td>
-                      R$<?php echo $dados['preco'] ?>
+                      R$<?php echo $dados['precoDestaque'] ?>
                     </td>
                     <td>
                       <span class="badge badge-dot mr-4">
-                        <i class="bg-warning"></i> <?php echo $dados['ingredientes'] ?>
+                        <i class="bg-warning"></i> <?php echo $dados['descricaoDestaque'] ?>
                       </span>
                     </td>
                     <td class="text-right">
@@ -83,8 +83,8 @@
                           <i class="fas fa-ellipsis-v"></i>
                         </a>
                         <div class="dropdown-menu dropdown-menu-right dropdown-menu-arrow">
-                          <a class="dropdown-item" href="reeditarPizza.php?id=<?php echo $dados['idPizza'] ?>">Editar</a>
-                          <a class="dropdown-item" href="back/api.php?funcao=excluirPizza&id=<?php echo $dados['idPizza'] ?>">Excluir</a>
+                          <a class="dropdown-item" href="reeditarPizzaDestaque.php?id=<?php echo $dados['idDestaque'] ?>">Editar</a>
+                          <a class="dropdown-item" href="back/api.php?funcao=excluirPizzaDestaque&id=<?php echo $dados['idDestaque'] ?>">Excluir</a>
                         </div>
                       </div>
                     </td>

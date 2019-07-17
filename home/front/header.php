@@ -27,7 +27,7 @@
       </button>
       <!-- Brand -->
       <a class="navbar-brand pt-0" href="./index.php">
-        <img src="./assets/img/brand/blue.png" class="navbar-brand-img" alt="...">
+      <h3> Pizzaria Santana </h3>
       </a>
     
       <!-- Collapse -->
@@ -37,7 +37,7 @@
           <div class="row">
             <div class="col-6 collapse-brand">
               <a href="./index.php">
-                <img src="./assets/img/brand/blue.png">
+               <h3> Pizzaria Santana </h3>
               </a>
             </div>
             <div class="col-6 collapse-close">
@@ -91,7 +91,7 @@
           </li>
 
           <li class="nav-item">
-            <a class="nav-link " href="./examples/icons.php">
+            <a class="nav-link " href="editPizzaDestaque.php">
               <i class="ni ni-tag text-blue"></i>Pizzas em destaques
             </a>
           </li>
