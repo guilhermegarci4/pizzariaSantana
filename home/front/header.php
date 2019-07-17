@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
   <meta charset="utf-8" />
@@ -135,7 +135,7 @@
               </div>
               
               <div class="dropdown-divider"></div>
-              <a href="#!" class="dropdown-item">
+              <a href="../home/back/logout.php" class="dropdown-item">
                 <i class="ni ni-user-run"></i>
                 <span>Sair</span>
               </a>

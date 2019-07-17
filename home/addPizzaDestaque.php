@@ -1,20 +1,16 @@
-<!--
+<?php 
+require 'back/conexao.php'; //Conexão com o banco de dados
+require 'back/Validador.class.php'; //Validador para o nível de acesso
 
-=========================================================
-* Argon Dashboard - v1.1.0
-=========================================================
+$validador = new Validador();
 
-* Product Page: https://www.creative-tim.com/product/argon-dashboard
-* Copyright 2019 Creative Tim (https://www.creative-tim.com)
-* Licensed under MIT (https://github.com/creativetimofficial/argon-dashboard/blob/master/LICENSE.md)
 
-* Coded by Creative Tim
+if($validador->validaNivelAdm())
+{ //Abre if do validadorrequire_once 'front/header.php' 
 
-=========================================================
+require_once 'front/header.php';
 
-* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. -->
-
-<?php require_once 'front/header.php' ?>
+?>
 
     <!-- Header -->
     <div class="header pb-8 pt-5 pt-lg-8 d-flex align-items-center" style="min-height: 600px; background-image: url(../images/logooficial.jpeg); background-size: cover; background-position: center top;">
@@ -121,3 +117,13 @@
 </body>
 
 </html>
+
+<?php
+
+} //fecha id do validador
+else //Caso o nível do usuário seja diferente ele é redirecionado para o index
+{
+    header("Location: index.php");
+}
+
+?>
