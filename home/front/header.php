@@ -95,6 +95,12 @@
               <i class="ni ni-tag text-blue"></i>Pizzas em destaques
             </a>
           </li>
+
+          <li class="nav-item">
+            <a class="nav-link " href="editGaleria.php">
+              <i class="ni ni-tag text-blue"></i>Galeria
+            </a>
+          </li>
        
         
         

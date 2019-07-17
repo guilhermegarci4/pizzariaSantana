@@ -265,6 +265,79 @@ if($_GET['funcao'] == "editarPizzaDestaque")
     }
 }
 
+//
+// Editar pizzas em destaques
+if($_GET['funcao'] == "editarGaleria")
+{
+    $descricaoFoto = $_POST['descricaoFoto'];
+
+    $idGaleria = $_GET['id'];
+
+    $foto = $_FILES['foto']['name'];
+
+    if($foto == '' || $foto == NULL)
+    {
+            $sql_alterar = mysqli_query($con, " UPDATE destaque 
+                                                SET saborDestaque='$sabor', 
+                                                    precoDestaque='$precoDestaque', 
+                                                    descricaoDestaque='$descricaoDestaque'
+                                                WHERE idDestaque='$idDestaque'
+                                               ");
+            
+            echo "<script type='javascript'>alert('Erro!');";
+            header("location: ../editPizzaDestaque.php" );
+            exit;
+    }
+    else 
+    {   
+        $sql_alt = mysqli_query($con, "SELECT * FROM galeria WHERE idGaleria='$idGaleria'");
+        while($fotos = mysqli_fetch_array($sql_alt)){
+            $foto = $fotos['foto'];	
+        }
+        unlink("../fotoGaleria/$foto");
+
+        //ADAPTAR NOME DA IMAGEM E DEIXAR NO DIMINUTIVO
+        $foto = str_replace(" ","_",$foto);
+        $foto = str_replace("á","a",$foto);
+        $foto = str_replace("à","a",$foto);
+        $foto = str_replace("ã","a",$foto);
+        $foto = str_replace("â","a",$foto);
+        $foto = str_replace("é","e",$foto);
+        $foto = str_replace("è","e",$foto);
+        $foto = str_replace("í","i",$foto);
+        $foto = str_replace("ì","i",$foto);
+        $foto = str_replace("ó","o",$foto);
+        $foto = str_replace("õ","o",$foto);
+        $foto = str_replace("ç","c",$foto);
+        $foto = strtolower($foto);
+
+    if(!move_uploaded_file($_FILES['foto']['tmp_name'], "../fotoGaleria/".$foto))
+        {				
+            header("Location: ../editGaleria.php");
+            exit; 
+		}
+
+        $sql_alterar = mysqli_query($con, " UPDATE galeria 
+                                            SET foto='$foto',
+                                                descricaoFoto='$descricaoFoto'
+                                            WHERE idGaleria='$idGaleria'
+                                        ");
+
+        if($sql_alterar == TRUE) 
+        {
+            echo "<script type='javascript'>alert('Ok!');";
+            header("location: ../editGaleria.php" );
+            exit;
+        }
+        else
+        {
+            echo "<script type='javascript'>alert('Erro!');";
+            header("location: ../editGaleria.php" );
+            exit;
+        }
+    }
+}
+
 if($_GET['funcao'] == "excluirPizza")
 {
 	$idExcluir = $_GET['id'];
