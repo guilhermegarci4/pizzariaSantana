@@ -58,7 +58,7 @@ require_once 'front/header.php'
               </div>
             </div>
             <div class="card-body">
-              <form action="back/api.php?funcao=editarPizza" method="post" enctype="multipart/form-data">
+              <form action="back/api.php?funcao=editarPizza&id=<?php echo $id ?>" method="post" enctype="multipart/form-data">
                 <h6 class="heading-small text-muted mb-4">Informações</h6>
                 <div class="pl-lg-4">
                   <div class="row">
@@ -92,9 +92,10 @@ require_once 'front/header.php'
                     <div class="col-lg-6">
                       <div class="form-group">
                         <label class="form-control-label" for="input-last-name">Lado da pizza no cardápio</label>
-                        <select id="" value="<?php echo $row['lado'];?>" name="lado" class="form-control form-control-alternative">
-                            <option value="0"> Esquerdo </option>
-                            <option value="1"> Direito </option>
+                        <span ><?php $row['lado'] ?>  </span>
+                        <select id="" name="lado" class="form-control form-control-alternative">
+                            <option value="0" <?=($row['lado'] == '0')?'selected':''?>> Esquerdo </option>
+                            <option value="1" <?=($row['lado'] == '1')?'selected':''?> > Direito </option>
                         </select>
                       </div>
                     </div>

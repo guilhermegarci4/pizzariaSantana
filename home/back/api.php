@@ -104,4 +104,87 @@ if($_GET['funcao'] == "addPizzaDestaque" && addslashes(file_get_contents($_FILES
  
 } // Fim API para adicionar pizza em destaque
 
+//
+// Editar pizzas cadastradas no sistema
+if($_GET['funcao'] == "editarPizza")
+{
+    $noPizza = $_POST['noPizza'];
+    $sabor = $_POST['sabor'];
+    $ingredientes = $_POST['ingredientes'];
+    $preco = $_POST['preco'];
+    $lado = $_POST['lado'];
+    $idEditar = $_GET['id'];
+
+    $foto = $_FILES['foto']['name'];
+
+    if($foto == '' || $foto == NULL)
+    {
+            $sql_alterar = mysqli_query($con, " UPDATE cardapio 
+                                                SET noPizza='$noPizza', 
+                                                    sabor='$sabor', 
+                                                    ingredientes='$ingredientes',
+                                                    preco='$preco', 
+                                                    lado='$lado' 
+                                                WHERE idPizza='$idEditar'
+                                               ");
+            
+            echo "<script type='javascript'>alert('Erro!');";
+            header("location: ../editPizza.php" );
+            exit;
+    }
+    else 
+    {   
+        $sql_alt = mysqli_query($con, "SELECT * FROM cardapio WHERE idPizza='$idEditar'");
+        while($fotos = mysqli_fetch_array($sql_alt)){
+            $foto = $fotos['foto'];	
+        }
+        unlink("../fotoJogador/$foto");
+
+        //ADAPTAR NOME DA IMAGEM E DEIXAR NO DIMINUTIVO
+        $foto = str_replace(" ","_",$foto);
+        $foto = str_replace("á","a",$foto);
+        $foto = str_replace("à","a",$foto);
+        $foto = str_replace("ã","a",$foto);
+        $foto = str_replace("â","a",$foto);
+        $foto = str_replace("é","e",$foto);
+        $foto = str_replace("è","e",$foto);
+        $foto = str_replace("í","i",$foto);
+        $foto = str_replace("ì","i",$foto);
+        $foto = str_replace("ó","o",$foto);
+        $foto = str_replace("õ","o",$foto);
+        $foto = str_replace("ç","c",$foto);
+        $foto = strtolower($foto);
+
+    if(!move_uploaded_file($_FILES['foto']['tmp_name'], "../fotoPizza/".$foto))
+        {				
+            header("Location: ../editPizza.php");
+            exit; 
+		}
+
+        $sql_alterar = mysqli_query($con, " UPDATE cardapio 
+                                            SET 
+                                                foto='$foto',
+                                                noPizza='$noPizza', 
+                                                sabor='$sabor', 
+                                                ingredientes='$ingredientes', 
+                                                preco='$preco', 
+                                                lado='$lado'                                                
+                                            WHERE idPizza='$idEditar'
+                                        ");
+
+        if($sql_alterar == TRUE) 
+        {
+            echo "<script type='javascript'>alert('Ok!');";
+            header("location: ../editPizza.php" );
+            exit;
+        }
+        else
+        {
+            echo "<script type='javascript'>alert('Erro!');";
+            header("location: ../editPizza.php" );
+            exit;
+        }
+    }
+}
+
 
