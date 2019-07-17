@@ -98,7 +98,7 @@
 
           <li class="nav-item">
             <a class="nav-link " href="editGaleria.php">
-              <i class="ni ni-tag text-blue"></i>Galeria
+              <i class="ni ni-image text-blue"></i>Galeria
             </a>
           </li>
        

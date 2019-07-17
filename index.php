@@ -11,6 +11,10 @@ $result1 = mysqli_query($con , $sql1);
 
 $sql2 = "SELECT * FROM destaque";
 $result2 = mysqli_query($con , $sql2);
+
+$sql3 = "SELECT * FROM galeria";
+$result3 = mysqli_query($con , $sql3);
+
 ?>
 
 <!DOCTYPE html>
@@ -306,34 +310,39 @@ $result2 = mysqli_query($con , $sql2);
     <section class="ftco-gallery">
     	<div class="container-wrap">
     		<div class="row no-gutters">
+			<?php 
+			while ($dados3 = mysqli_fetch_array($result3))
+				{ //abre while
+			?>
 					<div class="col-md-3 ftco-animate">
-						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-1.jpg);">
+						<a href="#" class="gallery img d-flex align-items-center" style="background-image: url(home/fotoGaleria/<?php echo $dados3['foto']?>);">
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
+    							<span class="icon-search"></span>
+    						</div>
 						</a>
 					</div>
-					<div class="col-md-3 ftco-animate">
+			<?php } ?>
+					<!-- <div class="col-md-3 ftco-animate">
 						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-2.jpg);">
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
+    							<span class="icon-search"></span>
+    						</div>
 						</a>
 					</div>
 					<div class="col-md-3 ftco-animate">
 						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-3.jpg);">
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
+    							<span class="icon-search"></span>
+    						</div>
 						</a>
 					</div>
 					<div class="col-md-3 ftco-animate">
 						<a href="gallery.html" class="gallery img d-flex align-items-center" style="background-image: url(images/gallery-4.jpg);">
 							<div class="icon mb-4 d-flex align-items-center justify-content-center">
-    						<span class="icon-search"></span>
-    					</div>
+    							<span class="icon-search"></span>
+    						</div>
 						</a>
-					</div>
+					</div> -->
         </div>
     	</div>
     </section>
