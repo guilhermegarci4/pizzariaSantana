@@ -8,8 +8,8 @@
     ADM | Pizzaria Santana
   </title>
   <!-- Favicon -->
-  <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
-  <!-- Fonts -->
+<!--   <link href="./assets/img/brand/favicon.png" rel="icon" type="image/png">
+ -->  <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet">
   <!-- Icons -->
   <link href="./assets/js/plugins/nucleo/css/nucleo.css" rel="stylesheet" />
@@ -48,17 +48,7 @@
             </div>
           </div>
         </div>
-        <!-- Form -->
-        <form class="mt-4 mb-3 d-md-none">
-          <div class="input-group input-group-rounded input-group-merge">
-            <input type="search" class="form-control form-control-rounded form-control-prepended" placeholder="Search" aria-label="Search">
-            <div class="input-group-prepend">
-              <div class="input-group-text">
-                <span class="fa fa-search"></span>
-              </div>
-            </div>
-          </div>
-        </form>
+      
         <!-- Navigation -->
         <ul class="navbar-nav">
           <li class="nav-item  class=" active" ">
@@ -101,6 +91,17 @@
               <i class="ni ni-image text-blue"></i>Galeria
             </a>
           </li>
+  <hr/>
+          <li class="nav-item">
+            <a class="nav-link " href="editContato.php">
+              <i class="ni ni-tablet-button text-blue"></i>Entre em contato
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link " href="../home/back/logout.php">
+              <i class="ni ni-user-run text-blue"></i>Sair
+            </a>
+          </li>
        
         
         
@@ -122,7 +123,6 @@
             <a class="nav-link pr-0" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="media align-items-center">
                 <span class="avatar avatar-sm rounded-circle">
-                  <img alt="Image placeholder" src="./assets/img/theme/team-4-800x800.jpg">
                 </span>
                 <div class="media-body ml-2 d-none d-lg-block">
                   <span class="mb-0 text-sm  font-weight-bold">Administrador</span>

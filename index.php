@@ -51,17 +51,17 @@ $result3 = mysqli_query($con , $sql3);
 
   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-			  <a class="navbar-brand" href="index.html"><span class="flaticon-pizza-1 mr-1"></span>Pizzaria<br><small>Santana</small></a>
+			  <a class="navbar-brand" href="index.php"><span class="flaticon-pizza-1 mr-1"></span>Pizzaria<br><small>Santana</small></a>
 		      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 		        <span class="oi oi-menu"></span> Menu
 		      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
 	          <li class="nav-item active"><a href="index.php" class="nav-link">Inicio</a></li>
-	          <li class="nav-item"><a href="menu.php" class="nav-link">Menu</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Serviços</a></li>	
-	          <li class="nav-item"><a href="about.html" class="nav-link">Sobre</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Entre em contato</a></li>
+	          <li class="nav-item"><a href="menu.php" class="nav-link">Cardápio</a></li>
+	          <li class="nav-item"><a href="services.php" class="nav-link">Serviços</a></li>	
+	          <li class="nav-item"><a href="about.php" class="nav-link">Sobre</a></li>
+	          <li class="nav-item"><a href="contact.php" class="nav-link">Entre em contato</a></li>
 	        </ul>
 	      </div>
 		  </div>
@@ -78,9 +78,9 @@ $result3 = mysqli_query($con , $sql3);
 
 				<div class="col-md-7 col-sm-12 text-center ftco-animate">
 					<span class="subheading">Bem vindo</span>
-				<h1 class="mb-4">COLOCAR ALGUMA FRASE AQUI</h1>
+				<h1 class="mb-4">PIZZARIA SANTANA</h1>
 				<p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-				<p><a href="menu.php" class="btn btn-primary p-3 px-xl-4 py-xl-3">Visualizar Menu</a></p>
+				<p><a href="menu.php" class="btn btn-primary p-3 px-xl-4 py-xl-3">Visualizar Cardápio</a></p>
 				</div>
 
 			</div>
@@ -92,10 +92,10 @@ $result3 = mysqli_query($con , $sql3);
           <div class="row slider-text align-items-center" data-scrollax-parent="true">
 
             <div class="col-md-6 col-sm-12 ftco-animate">
-            	<span class="subheading">Delicious</span>
-              <h1 class="mb-4">Italian Cuizine</h1>
+            	<span class="subheading">Experimente</span>
+              <h1 class="mb-4">Pizzas deliciosas</h1>
               <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="menu.php" class="btn btn-primary p-3 px-xl-4 py-xl-3">Visualizar Menu</a> </p>
+              <p><a href="menu.php" class="btn btn-primary p-3 px-xl-4 py-xl-3">Visualizar Cardápio</a> </p>
             </div>
             <div class="col-md-6 ftco-animate">
             	<img src="images/bg_1.png" class="img-fluid" alt="">
@@ -111,10 +111,10 @@ $result3 = mysqli_query($con , $sql3);
           <div class="row slider-text align-items-center" data-scrollax-parent="true">
 
             <div class="col-md-6 col-sm-12 order-md-last ftco-animate">
-            	<span class="subheading">Crunchy</span>
-              <h1 class="mb-4">Italian Pizza</h1>
+            	<span class="subheading">Crocante</span>
+              <h1 class="mb-4">Venha nós visitar</h1>
               <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="menu.php" class="btn btn-primary p-3 px-xl-4 py-xl-3">Visualizar Menu</a> </p>
+              <p><a href="menu.php" class="btn btn-primary p-3 px-xl-4 py-xl-3">Visualizar Cardápio</a> </p>
             </div>
             <div class="col-md-6 ftco-animate">
             	<img src="images/bg_2.png" class="img-fluid" alt="">
@@ -157,8 +157,8 @@ $result3 = mysqli_query($con , $sql3);
 	    		</div>
 	    		<div class="social d-md-flex pl-md-5 p-4 align-items-center">
 	    			<ul class="social-icon">
-              <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-			  <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+					<li class="ftco-animate"><a href="https://www.facebook.com/pizzariaSantanaGeorgeOetterer/?__tn__=K-R&eid=ARAdmeuY6bKYvXnUDq7NvuL-StKVJc0-4ruF0r24aRojXvBgcz9RsQ9NmGszyiWjykfKJC9ZnQodfW1e&fref=mentions"><span class="icon-facebook"></span></a></li>
+			  <li class="ftco-animate"><a href="https://www.instagram.com/pizzaria_santana02/"><span class="icon-instagram"></span></a></li>
 			  <li class="ftco-animate"><a href="https://api.whatsapp.com/send?1=pt_BR&phone=5515996797052"><span class="icon-whatsapp"></span></a></li>
             </ul>
 	    		</div>
@@ -359,19 +359,19 @@ $result3 = mysqli_query($con , $sql3);
     			</div>
 	    		<div class="col-md-6 appointment ftco-animate">
 	    			<h3 class="mb-3">FALE CONOSCO</h3>
-	    			<form action="#" class="appointment-form">
+	    			<form action="home/back/api.php?funcao=contatoindex" method="post" class="appointment-form">
 	    				<div class="d-md-flex">
 		    				<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="Nome">
+		    					<input name="email" type="text" class="form-control" placeholder="Email">
 		    				</div>
 	    				</div>
 	    				<div class="d-me-flex">
 	    					<div class="form-group">
-		    					<input type="text" class="form-control" placeholder="Sobrenome">
+		    					<input name="assunto" type="text" class="form-control" placeholder="Assunto">
 		    				</div>
 	    				</div>
 	    				<div class="form-group">
-	              <textarea name="" id="" cols="30" rows="3" class="form-control" placeholder="Mensagem"></textarea>
+	              <textarea name="mensagem" id="" cols="30" rows="3" class="form-control" placeholder="Mensagem"></textarea>
 	            </div>
 	            <div class="form-group">
 	              <input type="submit" value="Enviar" class="btn btn-primary py-3 px-4">

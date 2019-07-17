@@ -1,5 +1,4 @@
 <?php
-
 require_once 'conexao.php';
 
 // API para adicionar a pizza
@@ -388,3 +387,52 @@ if($_GET['funcao'] == "excluirPizzaDestaque")
             exit;
 	}	  
 }
+
+if($_GET['funcao'] == "contato")
+{
+    $nome = $_POST['nome'];
+    $email = $_POST['email'];
+    $assunto = $_POST['assunto'];
+    $mensagem = $_POST['mensagem'];
+
+    $SQL = mysqli_query ($con," INSERT INTO contato (nome, email, assunto, mensagem)    
+                                VALUES ('$nome', '$email', '$assunto', '$mensagem') ");
+
+    if($SQL == TRUE) 
+    {
+        echo "<script type='javascript'>alert('Ok!');";
+        header("location: ../../contact.php" );
+        exit;
+    }
+    else
+    {
+        echo "<script type='javascript'>alert('Erro!');";
+        header("location: ../../contact.php" );
+        exit;
+    }
+ 
+} // Fim API para adicionar pizza ao cardapio
+
+if($_GET['funcao'] == "contatoindex")
+{
+    $email = $_POST['email'];
+    $assunto = $_POST['assunto'];
+    $mensagem = $_POST['mensagem'];
+
+    $SQL = mysqli_query ($con," INSERT INTO contato (email, assunto, mensagem)    
+                                VALUES ('$email', '$assunto', '$mensagem') ");
+
+    if($SQL == TRUE) 
+    {
+        echo "<script type='javascript'>alert('Ok!');";
+        header("location: ../../index.php" );
+        exit;
+    }
+    else
+    {
+        echo "<script type='javascript'>alert('Erro!');";
+        header("location: ../../index.php" );
+        exit;
+    }
+ 
+} // Fim API para adicionar pizza ao cardapio
