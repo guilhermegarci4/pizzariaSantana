@@ -4,10 +4,10 @@
 // localhost
 // Porta: 3306
   
-$servidor="localhost:3306";
-$udb="root";
-$senha="159753";
-$bdados="pizzaria";
+$servidor="sql246.main-hosting.eu.";
+$udb="u776348283_pizza";
+$senha="bCyYS0ftVfks";
+$bdados="u776348283_pizza";
   
 // Criando a conexão com a base de dados
 $con = mysqli_connect($servidor,$udb,$senha,$bdados);

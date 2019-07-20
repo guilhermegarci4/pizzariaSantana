@@ -3,10 +3,10 @@
 
 //Selecionar o cardapio
 //
-$sql = "SELECT * FROM cardapio WHERE lado = '0' ORDER BY sabor ASC";
+$sql = "SELECT * FROM cardapio WHERE lado = '0' ORDER BY noPizza ASC";
 $result = mysqli_query($con , $sql);
 
-$sql1 = "SELECT * FROM cardapio WHERE lado = '1' ORDER BY sabor ASC";
+$sql1 = "SELECT * FROM cardapio WHERE lado = '1' ORDER BY noPizza ASC";
 $result1 = mysqli_query($con , $sql1);
 
 $sql2 = "SELECT * FROM destaque";
@@ -26,7 +26,7 @@ $result3 = mysqli_query($con , $sql3);
     
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Josefin+Sans" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Nothing+You+Could+Do" rel="stylesheet">
 
     <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
     <link rel="stylesheet" href="css/animate.css">
@@ -45,7 +45,28 @@ $result3 = mysqli_query($con , $sql3);
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
   </head>
   <body>
 
@@ -79,7 +100,7 @@ $result3 = mysqli_query($con , $sql3);
 				<div class="col-md-7 col-sm-12 text-center ftco-animate">
 					<span class="subheading">Bem vindo</span>
 				<h1 class="mb-4">PIZZARIA SANTANA</h1>
-				<p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+				<p class="mb-4 mb-md-5">Há mais de 10 anos de tradição em Sorocaba, trazemos agora para George Oetterer, pizzas quentinhas diretamente do forno a lenha.</p>
 				<p><a href="menu.php" class="btn btn-primary p-3 px-xl-4 py-xl-3">Visualizar Cardápio</a></p>
 				</div>
 
@@ -94,11 +115,12 @@ $result3 = mysqli_query($con , $sql3);
             <div class="col-md-6 col-sm-12 ftco-animate">
             	<span class="subheading">Experimente</span>
               <h1 class="mb-4">Pizzas deliciosas</h1>
-              <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <p>Diversas opções para todos os gostos.</p>
+			  <p>Uma massa leve feita na hora, recheios irresistíveis, pizza quentinha diretamente do forno a lenha</p>
               <p><a href="menu.php" class="btn btn-primary p-3 px-xl-4 py-xl-3">Visualizar Cardápio</a> </p>
             </div>
             <div class="col-md-6 ftco-animate">
-            	<img src="images/bg_1.png" class="img-fluid" alt="">
+            	<img src="" class="img-fluid" alt="">
             </div>
 
           </div>
@@ -113,11 +135,11 @@ $result3 = mysqli_query($con , $sql3);
             <div class="col-md-6 col-sm-12 order-md-last ftco-animate">
             	<span class="subheading">Crocante</span>
               <h1 class="mb-4">Venha nós visitar</h1>
-              <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
+              <p class="mb-4 mb-md-5">Espaço amplo e aconchegante para acolher você, seus familiares e amigos.</p>
               <p><a href="menu.php" class="btn btn-primary p-3 px-xl-4 py-xl-3">Visualizar Cardápio</a> </p>
             </div>
             <div class="col-md-6 ftco-animate">
-            	<img src="images/bg_2.png" class="img-fluid" alt="">
+            	<img src="" class="img-fluid" alt="">
             </div>
 
           </div>
@@ -196,8 +218,8 @@ $result3 = mysqli_query($con , $sql3);
               	<span class="flaticon-pizza"></span>
               </div>
               <div class="media-body">
-                <h3 class="heading">Pizzas deliciosas</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <h3 class="heading">Rodízio</h3>
+                <p>Venha nos conhecer melhor e experimentar nosso rodizio.</p>
               </div>
             </div>      
           </div>
@@ -208,7 +230,7 @@ $result3 = mysqli_query($con , $sql3);
               </div>
               <div class="media-body">
                 <h3 class="heading">Entrega rápida</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>Temos motoboys preparados para que sua pizza chegue quentinha no conforto do seu lar.</p>
               </div>
             </div>      
           </div>
@@ -217,7 +239,7 @@ $result3 = mysqli_query($con , $sql3);
               <div class="icon d-flex justify-content-center align-items-center mb-5"><span class="flaticon-pizza-1"></span></div>
               <div class="media-body">
                 <h3 class="heading">Receitas originais</h3>
-                <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                <p>Usamos as mesmas receitas há mais de 10 anos, tudo feito na hora, fresquinho e com muito amor.</p>
               </div>
             </div>    
           </div>
@@ -230,7 +252,7 @@ $result3 = mysqli_query($con , $sql3);
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
             <h2 class="mb-4">Pizzas em destaques</h2>
-            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p>Todas as nossas pizzas são irresistíveis, mas algumas entram em destaque!</p>
           </div>
         </div>
     	</div>
@@ -239,11 +261,11 @@ $result3 = mysqli_query($con , $sql3);
 				<?php while($dados2 = mysqli_fetch_array($result2)) { ?>
     			<div class="col-lg-4 d-flex ftco-animate">
     				<div class="services-wrap d-flex">
-    					<a href="#" class="img" style="background-image: url(home/fotopizzaDestaque/<?php echo $dados2['fotoDestaque'] ?>);"></a>
+    					<a href="#" class="img" style="background-image: url(home/fotoPizzaDestaque/<?php echo $dados2['fotoDestaque'] ?>);"></a>
     					<div class="text p-4">
     						<h3><?php echo $dados2['saborDestaque'] ?></h3>
     						<p><?php echo $dados2['descricaoDestaque'] ?></p>
-    						<p class="price"><span>$<?php echo $dados2['precoDestaque'] ?></span> <a href="#" class="ml-2 btn btn-white btn-outline-white">MENU</a></p>
+    						<p class="price"><span>$<?php echo $dados2['precoDestaque'] ?></span> <a href="#" class="ml-2 btn btn-white btn-outline-white">CARDÁPIO</a></p>
     					</div>
     				</div>
 				</div>
@@ -257,7 +279,7 @@ $result3 = mysqli_query($con , $sql3);
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h2 class="mb-4">Cardápio</h2>
             <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
-            <p class="mt-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p class="mt-5">Confira nosso cardápio com seus respectivos preços.</p>
           </div>
 		</div>
 <!-- Lado 1 -->		

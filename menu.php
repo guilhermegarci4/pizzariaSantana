@@ -3,10 +3,10 @@
 
 //Selecionar o cardapio
 //
-$sql = "SELECT * FROM cardapio WHERE lado = '0' ORDER BY sabor ASC";
+$sql = "SELECT * FROM cardapio WHERE lado = '0' ORDER BY noPizza ASC";
 $result = mysqli_query($con , $sql);
 
-$sql1 = "SELECT * FROM cardapio WHERE lado = '1' ORDER BY sabor ASC";
+$sql1 = "SELECT * FROM cardapio WHERE lado = '1' ORDER BY noPizza ASC";
 $result1 = mysqli_query($con , $sql1);
 
 $sql2 = "SELECT * FROM destaque";
@@ -42,7 +42,28 @@ $result2 = mysqli_query($con , $sql2);
     
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
-    <link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/style.css">
+	
+	<link rel="apple-touch-icon" href="apple-icon.png">
+    <link rel="shortcut icon" href="favicon-32x32.png">
+
+	<link rel="apple-touch-icon" sizes="57x57" href="apple-icon-57x57.png">
+	<link rel="apple-touch-icon" sizes="60x60" href="apple-icon-60x60.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="apple-icon-72x72.png">
+	<link rel="apple-touch-icon" sizes="76x76" href="apple-icon-76x76.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="apple-icon-114x114.png">
+	<link rel="apple-touch-icon" sizes="120x120" href="apple-icon-120x120.png">
+	<link rel="apple-touch-icon" sizes="144x144" href="apple-icon-144x144.png">
+	<link rel="apple-touch-icon" sizes="152x152" href="apple-icon-152x152.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="apple-icon-180x180.png">
+	<link rel="icon" type="image/png" sizes="192x192"  href="android-icon-192x192.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="96x96" href="favicon-96x96.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+	<link rel="manifest" href="manifest.json">
+	<meta name="msapplication-TileColor" content="#ffffff">
+	<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+	<meta name="theme-color" content="#ffffff">
   </head>
 
   <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
@@ -56,8 +77,8 @@ $result2 = mysqli_query($con , $sql2);
 	          <li class="nav-item"><a href="index.php" class="nav-link">Inicio</a></li>
 	          <li class="nav-item active"><a href="menu.php" class="nav-link">Cardápio</a></li>
 	          <li class="nav-item"><a href="services.php" class="nav-link">Serviços</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">Sobre</a></li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Entre em contato</a></li>
+	          <li class="nav-item"><a href="about.php" class="nav-link">Sobre</a></li>
+	          <li class="nav-item"><a href="contact.php" class="nav-link">Entre em contato</a></li>
 	        </ul>
 	      </div>
 		  </div>
@@ -86,7 +107,7 @@ $result2 = mysqli_query($con , $sql2);
     		<div class="row justify-content-center mb-5 pb-3">
           <div class="col-md-7 heading-section ftco-animate text-center">
             <h2 class="mb-4">Nosso Cardápio</h2>
-            <p>Essas são as nossas pizzas que estão em destaques.</p>
+            <p>Todas as nossas pizzas são irresistíveis, mas algumas entram em destaque!</p>
           </div>
         </div>
     	</div>
@@ -101,7 +122,7 @@ $result2 = mysqli_query($con , $sql2);
     					<div class="text p-4">
     						<h3><?php echo $dados2['saborDestaque'] ?></h3>
     						<p><?php echo $dados2['descricaoDestaque'] ?></p>
-    						<p class="price"><span>$<?php echo $dados2['precoDestaque'] ?></span> <a href="#" class="ml-2 btn btn-white btn-outline-white">MENU</a></p>
+    						<p class="price"><span>$<?php echo $dados2['precoDestaque'] ?></span> </p>
     					</div>
     				</div>
 				</div>
@@ -117,7 +138,7 @@ $result2 = mysqli_query($con , $sql2);
           <div class="col-md-7 heading-section text-center ftco-animate">
             <h2 class="mb-4">Cardápio</h2>
             <p class="flip"><span class="deg1"></span><span class="deg2"></span><span class="deg3"></span></p>
-            <p class="mt-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <p class="mt-5">Confira nosso cardápio com seus respectivos preços.</p>
           </div>
 		</div>
 		<!-- Lado 1 -->		
@@ -194,34 +215,71 @@ $result2 = mysqli_query($con , $sql2);
 		              	<div class="row">
 		              		<div class="col-md-4 text-center">
 		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-1.jpg);"></a>
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/logooficial.jpeg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
+		              					<h3><a href="#">Brigadeiro</a></h3>
+		              					<p>Brigadeiro e granulado de chocolate</p>
+		              					<p class="price"><span>R$23,00</span></p>
 		              				</div>
 		              			</div>
 		              		</div>
 		              		<div class="col-md-4 text-center">
 		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-2.jpg);"></a>
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/logooficial.jpeg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
+		              					<h3><a href="#">Prestígio</a></h3>
+		              					<p>Brigadeiro e coco ralado</p>
+		              					<p class="price"><span>R$23,00</span></p>
 		              				</div>
 		              			</div>
 		              		</div>
 		              		<div class="col-md-4 text-center">
 		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/pizza-3.jpg);"></a>
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/logooficial.jpeg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Itallian Pizza</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
+		              					<h3><a href="#">Romeu e Julieta</a></h3>
+		              					<p>Goiabada e mussarela</p>
+		              					<p class="price"><span>R$23,00</span></p>
+		              				</div>
+		              			</div>
+		              		</div>
+							  <div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/logooficial.jpeg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Banana I</a></h3>
+		              					<p>Banana, leite condensado e açúcar com canela</p>
+		              					<p class="price"><span>R$23,00</span></p>
+		              				</div>
+		              			</div>
+		              		</div>
+							  <div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/logooficial.jpeg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Banana II</a></h3>
+		              					<p>Banana, mussarela, e açúcar com canela</p>
+		              					<p class="price"><span>R$23,00</span></p>
+		              				</div>
+		              			</div>
+		              		</div>
+							  <div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/logooficial.jpeg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Confete</a></h3>
+		              					<p>Brigadeiro e confete</p>
+		              					<p class="price"><span>R$23,00</span></p>
+		              				</div>
+		              			</div>
+		              		</div>
+							  <div class="col-md-4 text-center">
+		              			<div class="menu-wrap">
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/logooficial.jpeg);"></a>
+		              				<div class="text">
+		              					<h3><a href="#">Doce de leite</a></h3>
+		              					<p>Doce de leite e mussarela</p>
+		              					<p class="price"><span>R$23,00</span></p>
 		              				</div>
 		              			</div>
 		              		</div>
@@ -232,37 +290,25 @@ $result2 = mysqli_query($con , $sql2);
 		                <div class="row">
 		              		<div class="col-md-4 text-center">
 		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-1.jpg);"></a>
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/coca.png);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Lemonade Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
+		              					<h3><a href="#">Refrigerantes</a></h3>
+		              					<p>Temos os mais variados refrigerantes para melhor atendê-los</p>
+		              					<p class="price"><span>R$</span></p>
 		              				</div>
 		              			</div>
 		              		</div>
 		              		<div class="col-md-4 text-center">
 		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-2.jpg);"></a>
+		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/suco.jpg);"></a>
 		              				<div class="text">
-		              					<h3><a href="#">Pineapple Juice</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
+		              					<h3><a href="#">Sucos - EM BREVE</a></h3>
+		              					<p>Novidades em breve.</p>
+		              					<p class="price"><span>R$</span></p>
 		              				</div>
 		              			</div>
 		              		</div>
-		              		<div class="col-md-4 text-center">
-		              			<div class="menu-wrap">
-		              				<a href="#" class="menu-img img mb-4" style="background-image: url(images/drink-3.jpg);"></a>
-		              				<div class="text">
-		              					<h3><a href="#">Soda Drinks</a></h3>
-		              					<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia.</p>
-		              					<p class="price"><span>$2.90</span></p>
-		              					<p><a href="#" class="btn btn-white btn-outline-white">Add to cart</a></p>
-		              				</div>
-		              			</div>
-		              		</div>
+		              		
 		              	</div>
 		              </div>
 
