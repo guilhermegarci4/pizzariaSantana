@@ -157,7 +157,7 @@ $result2 = mysqli_query($con , $sql2);
 				<?php while($dados2 = mysqli_fetch_array($result2)) { ?>
     			<div class="col-lg-4 d-flex ftco-animate">
     				<div class="services-wrap d-flex">
-    					<a href="#" class="img" style="background-image: url(home/fotopizzaDestaque/<?php echo $dados2['fotoDestaque'] ?>);"></a>
+    					<a href="#" class="img" style="background-image: url(home/fotoPizzaDestaque/<?php echo $dados2['fotoDestaque'] ?>);"></a>
     					<div class="text p-4">
     						<h3><?php echo $dados2['saborDestaque'] ?></h3>
     						<p><?php echo $dados2['descricaoDestaque'] ?></p>
